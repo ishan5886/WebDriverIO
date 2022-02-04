@@ -1,0 +1,29 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1643265948098' stop='1643265962315'>
+    <name>handling checkboxes</name>
+    <title>handling checkboxes</title>
+    <test-cases>
+        <test-case start='1643265948098' status='broken' stop='1643265962313'>
+            <name>verify checkbox elements</name>
+            <title>verify checkbox elements</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-97.0.4692.99'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>this.getchckbox(...).waitForDisplayed is not a function</message>
+                <stack-trace>TypeError: this.getchckbox(...).waitForDisplayed is not a function
+                    at CheckboxClass.clickOnLink (/Users/ishandhaliwal/Documents/WIO2/pages/checkboxes.js:8:25)
+                    at Context.&lt;anonymous> (/Users/ishandhaliwal/Documents/WIO2/test/checkboxtest.js:12:24)
+                    at async Context.executeAsync (/Users/ishandhaliwal/Documents/WIO2/node_modules/@wdio/utils/build/shim.js:137:16)
+                    at async Context.exports.testFrameworkFnWrapper (/Users/ishandhaliwal/Documents/WIO2/node_modules/@wdio/utils/build/test-framework/testFnWrapper.js:51:18)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

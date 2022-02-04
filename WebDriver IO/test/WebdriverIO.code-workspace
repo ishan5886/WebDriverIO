@@ -1,0 +1,22 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../WDIO- POM Framework"
+		},
+		{
+			"path": "../../WDIO-Cucumber"
+		},
+		{
+			"path": "../../TypeScript Learning"
+		},
+		{
+			"path": "../../JavaScript Learning"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "JavaScript Learning"
+	}
+}

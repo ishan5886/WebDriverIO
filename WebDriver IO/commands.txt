@@ -1,0 +1,56 @@
+npm test -- --spec ./test/filename.js
+
+npm run --suite suitename   OR  npm run suitename
+
+//ALLURE REPORTS SETUP
+
+> Open Project directory in terminal
+> npm install @wdio/allure-reporter --save-dev
+> Run program or suite
+> allure-results folder created in project directory
+> To generate allure reports  command - allure generate and allure open
+
+
+
+// RIMRAF
+
+> Install package and save as project dependency:
+npm install --save-dev rimraf@latest
+
+> In your package.json file, add the following npm scripts:
+
+  "scripts": {
+    "report-open": "allure open allure-report",
+    "report-generate": "allure generate --clean allure-results",
+    "pretest": "rimraf allure-results && rimraf allure-report && rimraf test-screenshots && rimraf wdio-logs"
+  },
+
+Usage:
+
+pre-test: in order to start clean, run npm run-script pretest 
+(will remove all Allure results/reports, along with other mentioned logs & printscreens)
+
+after-test: run npm run-script report-generate 
+(will generate the Allure report based on allure-results folder contents)
+
+inspect report: run npm run-script report-open 
+(will open the Allure created inside the allure-report folder)
+
+
+//CONFIGURE DIFFERENT ENVIRONMENTS
+
+> create file url.js and specify different env urls
+
+> in wdio.config write the following code:-
+  
+  const url = require('./urls')
+  const ENV = process.env.ENV
+
+  if(!ENV || !['qa', 'dev', 'stage', 'prod'].includes(ENV)){
+      console.log('please pass the correct ENV value : ENV=qa|dev|stage|prod')
+      process.exit()
+    }
+
+> in wdio.config baseUrl field wite the following:  baseUrl: url[process.env.ENV]
+
+> In Terminal while running write ENV=envname then npm test command
